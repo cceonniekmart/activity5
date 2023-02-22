@@ -7,20 +7,25 @@
         $UserName = $_POST['user_name'];
         $PassWord = $_POST['password'];
         $Confirm = $_POST['confirm_password'];
+        $UserRole = $_POST['user_type']; 
 
-        if (empty($FirstName) || empty($LastName) || empty($UserName) || empty($PassWord) || empty($Confirm)) {
+        if (empty($FirstName) || empty($LastName) || empty($UserName) || empty($PassWord) || empty($Confirm) || empty($UserRole)) {
             header("Location: create.php?error=Kindly fill all fields");
             exit();
         } else if ($PassWord != $Confirm){
             header("Location: create.php?error=Password does not match");
             exit();
         } else {
-            $sql = "INSERT INTO `tbl_users`(`first_name`, `last_name`, `user_name`, `password`) VALUES ('$FirstName', '$LastName', '$UserName','$PassWord')";
+            $sql = "INSERT INTO `tbl_users`(`first_name`, `last_name`, `user_name`, `password`, `user_role`) 
+            VALUES ('$FirstName', '$LastName', '$UserName','$PassWord', '$UserRole')"; // modified
 
             $result = $conn->query($sql);
 
             if ($result == TRUE) {
                 echo "New record created successfully.";
+                if (isset($_GET['error'])) {
+                    unset($_GET['error']);
+                }
             } else {
                 echo "Error:". $sql . "<br>". $conn->error;
             } 
@@ -29,6 +34,7 @@
         }
     }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -62,7 +68,14 @@
     Confirm Password:<br>
     <input type="password" name="confirm_password">
     <br>
+    <label class="radio-inline">
+      <input type="radio" name="user_type" value="user"> User
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="user_type" value="admin"> Admin
+    </label>
     <input type="submit" name="submit" value="create">
+
     
   </fieldset>
 </form>

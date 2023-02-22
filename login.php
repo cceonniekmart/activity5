@@ -12,6 +12,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     $uname = validate($_POST['uname']);
     $pass = validate($_POST['password']);
+    $UserType = $_POST['user_type'];
 
     if (empty($uname)) {
         header("Location: index.php?error=User Name is required");
@@ -32,9 +33,16 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['last_name'] = $row['last_name'];
                 $_SESSION['user_name'] = $row['user_name'];
+                $_SESSION['user_role'] = $row['user_role'];
                 $_SESSION['id'] = $row['id'];
-                header("Location: home.php");
-                exit();
+                if ($_SESSION['user_role'] == 'user') {
+                    header("Location: user.php");
+                    exit();
+                } else {
+                    header("Location: admin.php");
+                    exit();
+                }
+               
 
             }else{
                 header("Location: index.php?error=Incorect User name or password");
