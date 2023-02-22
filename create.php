@@ -6,9 +6,13 @@
         $LastName = $_POST['last_name'];
         $UserName = $_POST['user_name'];
         $PassWord = $_POST['password'];
+        $Confirm = $_POST['confirm_password'];
 
-        if (empty($FirstName) || empty($LastName) || empty($UserName) || empty($PassWord)) {
+        if (empty($FirstName) || empty($LastName) || empty($UserName) || empty($PassWord) || empty($Confirm)) {
             header("Location: create.php?error=Kindly fill all fields");
+            exit();
+        } else if ($PassWord != $Confirm){
+            header("Location: create.php?error=Password does not match");
             exit();
         } else {
             $sql = "INSERT INTO `tbl_users`(`first_name`, `last_name`, `user_name`, `password`) VALUES ('$FirstName', '$LastName', '$UserName','$PassWord')";
@@ -54,6 +58,9 @@
     <br>
     Password:<br>
     <input type="password" name="password">
+    <br>
+    Confirm Password:<br>
+    <input type="password" name="confirm_password">
     <br>
     <input type="submit" name="submit" value="create">
     
