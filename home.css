@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&family=Montserrat+Alternates:wght@500&family=Pathway+Gothic+One&family=Press+Start+2P&family=Righteous&family=Rowdies&family=Titillium+Web:wght@200&display=swap');
+
+body {
+    background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+*{
+    font-family: 'Rowdies', cursive;
+    font-weight: 400;
+    box-sizing: padding-box;
+}
+
+/*
+customization
+*/
+#title{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 3em;
+    color: rgb(21, 4, 255);
+}
+.error {
+   background: #F2DEDE;
+   color: #0c0101;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+a {
+    margin-top: 10px;
+    background: rgba(4, 0, 252, 0.938);
+    padding: 40px 30px;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: .7;
+}

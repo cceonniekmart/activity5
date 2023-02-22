@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&family=Montserrat+Alternates:wght@500&family=Pathway+Gothic+One&family=Press+Start+2P&family=Righteous&family=Rowdies&family=Titillium+Web:wght@200&display=swap');
+
+body {
+    background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg);
+    background-size: cover;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+*{
+    font-family: 'Rowdies', cursive;
+    font-weight: 400;
+    box-sizing: padding-box;
+}
+
+/*
+customization
+*/
+#title{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 3em;
+}
+
+.loginflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    height: 370px;
+    width: 700px;
+    border: 3px solid #001219;
+    padding: 20px;
+    background: #00AFEF;
+    border-radius: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+input {
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+label {
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+}
+
+button {
+    float: right;
+    background: #001219;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+button:hover{
+    opacity: .10;
+}
+
+.error {
+   background: #F2DEDE;
+   color: #0c0101;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(134, 3, 3);
+}
+
+a {
+    float: right;
+    background: rgb(255, 255, 255);
+    padding: 8px 10px;
+    color: #000000;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: .7;
+}

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&family=Montserrat+Alternates:wght@500&family=Pathway+Gothic+One&family=Press+Start+2P&family=Righteous&family=Rowdies&family=Titillium+Web:wght@200&display=swap');
+
+body {
+    background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+*{
+    font-family: 'Rowdies', cursive;
+    font-weight: 400;
+    box-sizing: padding-box;
+}
+
+/*
+customization
+*/
+#title{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 3em;
+}
+
+form {
+    height: 580px;
+    width: 700px;
+    border: 3px solid #001219;
+    padding: 20px;
+    background: #00AFEF;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+input {
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+label {
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.error {
+    background: #F2DEDE;
+    color: #0c0101;
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    margin: 20px auto;
+    margin-top: -30px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(134, 3, 3);
+}
+
+a {
+    background: rgb(0, 0, 0);
+    padding: 10px 15px;
+    color: #f50000;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: none;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+}
+
+a:hover{
+    opacity: .7;
+}
+
+div.alert{
+    top: 0;
+    display: none;
+    position: fixed;
+}
