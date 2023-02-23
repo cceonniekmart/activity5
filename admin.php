@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$scores = array();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
  ?>
@@ -22,6 +23,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   
   <button type="submit">Confirm</button>
 </form>
+
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Question 1</th>
+            <th>Question 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($scores as $user => $user_scores): ?>
+        <tr>
+            <td><?php echo $user; ?></td>
+            <td><?php echo $user_scores['question1']; ?></td>
+            <td><?php echo $user_scores['question2']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
 
 </body>
 </html>
