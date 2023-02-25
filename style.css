@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&family=Montserrat+Alternates:wght@500&family=Pathway+Gothic+One&family=Press+Start+2P&family=Righteous&family=Rowdies&family=Titillium+Web:wght@200&display=swap');
 
 body {
-    background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg);
+    font-size: 16px;
+    background-image: url(images/bg.png);
     background-size: cover;
-    position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -12,18 +12,18 @@ body {
     overflow-x: hidden;
 }
 
-*{
-    font-family: 'Rowdies', cursive;
-    font-weight: 400;
-    box-sizing: padding-box;
+/* Use media queries to adjust font-size for smaller screens */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
 }
 
-/*
-customization
-*/
-#title{
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 3em;
+/* Use relative units for font-size and width */
+*{
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
 }
 
 .loginflex {
@@ -33,33 +33,62 @@ customization
     height: 100vh;
 }
 
+.loginflex div{
+    align-items: center;
+    text-align: center;
+
+}
+
+.loginflex div p{
+    color: yellow;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.loginflex div img{
+   
+}
+
 form {
-    height: 370px;
-    width: 700px;
+    height: auto;
+    width: 40%; /* Use percentage value instead of fixed pixels */
+    max-width: 700px; /* Set a max-width to avoid stretching on large screens */
     border: 3px solid #001219;
     padding: 20px;
-    background: #00AFEF;
+    background-color: white;
     border-radius: 20px;
+    margin-left: 7em;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label img {
+    width: 10%; /* Use percentage value instead of fixed pixels */
+    max-width: 50px; /* Set a max-width to avoid stretching on large screens */
+    height: auto; /* Use auto to maintain aspect ratio */
+    margin-right: 5px;
+    vertical-align: middle;
+}
+  
+label input {
+    display: block;
+    border: 2px solid #ccc;
+    background-color: #D9D9D9;
+    width: 95%;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 1em; /* Use relative units for font-size */
 }
 
 h2 {
     text-align: center;
     margin-bottom: 40px;
-}
-
-input {
-    display: block;
-    border: 2px solid #ccc;
-    width: 95%;
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 5px;
-}
-
-label {
-    color: black;
-    font-size: 18px;
-    padding: 10px;
+    font-size: 2em; /* Use relative units for font-size */
 }
 
 button {
@@ -70,19 +99,27 @@ button {
     border-radius: 5px;
     margin-right: 10px;
     border: none;
+    font-size: 1em; /* Use relative units for font-size */
+    cursor: pointer;
 }
 
-button:hover{
-    opacity: .10;
+#title{
+    letter-spacing: normal;
+    color: blue;
+    margin: 0;
 }
-
-.error {
+.error, .success {
+    margin-top: 0;
    background: #F2DEDE;
    color: #0c0101;
    padding: 10px;
-   width: 95%;
+   width: 100%;
    border-radius: 5px;
-   margin: 20px auto;
+   font-size: 1em; /* Use relative units for font-size */
+}
+
+.success{
+    background: #9de999;
 }
 
 h1 {
@@ -104,3 +141,12 @@ a {
 a:hover{
     opacity: .7;
 }
+.radio-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.radio-label {
+    margin-left: 0.5em;
+}                     

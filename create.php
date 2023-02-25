@@ -22,9 +22,11 @@
             $result = $conn->query($sql);
 
             if ($result == TRUE) {
-                echo "New record created successfully.";
-                if (isset($_GET['error'])) {
+                header("Location: create.php?success=New record created succesfully");
+                exit();
+                if (isset($_GET['error']) || isset($_GET['error'])) {
                     unset($_GET['error']);
+                    unset($_GET['success']);
                 }
             } else {
                 echo "Error:". $sql . "<br>". $conn->error;
@@ -40,45 +42,57 @@
 <!DOCTYPE html>
 <head>
     <title>Create Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="create.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <html>
 <body>
 
-    <h2>CREATE NEW ACCOUNT</h2>
-    <?php if (isset($_GET['error'])) { ?>
-        <p class="error"><?php echo $_GET['error']; ?></p>
-    <?php } ?>
-    <form action="" method="POST" action="index.php">
-  <fieldset>
-    <legend>Personal information:</legend>
-    First Name:<br>
-    <input type="text" name="first_name">
-    <br>
-    Last Name:<br>
-    <input type="text" name="last_name">
-    <br>
-    Username:<br>
-    <input type="text" name="user_name">
-    <br>
-    Password:<br>
-    <input type="password" name="password">
-    <br>
-    Confirm Password:<br>
-    <input type="password" name="confirm_password">
-    <br>
-    <label class="radio-inline">
-      <input type="radio" name="user_type" value="user"> User
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="user_type" value="admin"> Admin
-    </label>
-    <input type="submit" name="submit" value="create">
+<div class="loginflex">
+        <div>
+            <p>National University</p>
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png">
+        </div>
+        <form method="POST">
+            <h2 id="title">EDUCATION THAT WORKS</h2>
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <?php if (isset($_GET['success'])) { ?>
+                <p class="success"><?php echo $_GET['success']; ?></p>
+            <?php } ?>
+            
+            <label>
+                <img src="https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-vector-valid-user-icon-png-image_516298.jpg">
+                <input type="text" id="uname" name="first_name" placeholder="First Name">
+            </label>
+            <label>
+                <img src="https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-vector-valid-user-icon-png-image_516298.jpg">
+                <input type="text" id="password" name="last_name" placeholder="Last Name">
+            </label>
+            <label>
+                <img src="https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-vector-valid-user-icon-png-image_516298.jpg">
+                <input type="text" id="uname" name="user_name" placeholder="Username">
+            </label>
+            <label>
+                <img src="https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-vector-valid-user-icon-png-image_516298.jpg">
+                <input type="password" id="uname" name="password" placeholder="Password">
+            </label>
+            <label>
+                <img src="https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-vector-valid-user-icon-png-image_516298.jpg">
+                <input type="password" id="uname" name="confirm_password" placeholder="Confirm Password">
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="user_type" value="user"> 
+                <span class="radio-label">User</span>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="user_type" value="admin"> 
+                <span class="radio-label">Admin</span>
+            </label>    
 
-    
-  </fieldset>
-</form>
+            <button type="submit" name="submit">Create</button>
+        </form>
+    </div>
 <a class="btn btn-info" href="index.php">Go Back</a>
 
 </body>
