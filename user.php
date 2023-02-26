@@ -13,11 +13,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <body>
 
 <a href="index.php"><img src="images/login.png">Logout</a>
+
 <form action="submit_answers.php" method="post">
-
-
-
-
   <div class="group">
     <label for="group">Choose a group:</label>
     <select id="group" name="group">
@@ -30,8 +27,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     </select>
   </div>
   
-  
-
 
   <div class="rubrics">
     
