@@ -25,7 +25,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   </div>
   
   
-  <h2>Rubrics for group project:</h2>
+  <h2>Rubrics for group project: <br>
+  1 = Fail, 
+  2 = Fair, 
+  3 = Good, 
+  4 = Very Good,
+  5 = Excellent</h2>
   
 
   <div class="rubrics">
