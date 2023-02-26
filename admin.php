@@ -109,29 +109,29 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     }
 
     // generate chart
-echo "<script>
-google.charts.load('current', {'packages':['piechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ['User', 'Score'],
-        ";
-        foreach ($chart_data as $data) {
-            echo "['" . $data['user'] . "', " . ($data['question1']  + $data['question2'] + $data['question3'] + $data['question4'] + $data['question5'] + $data['question6'] + $data['question7'] + $data['question8'] + $data['question9'] + $data['question10'] + $data['question11'] + $data['question12']) . "],";
-        }
+    echo "<script>
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['User', 'Score'],
+            ";
+            foreach ($chart_data as $data) {
+                echo "['" . $data['user'] . "', " . ($data['question1']  + $data['question2'] + $data['question3'] + $data['question4'] + $data['question5'] + $data['question6'] + $data['question7'] + $data['question8'] + $data['question9'] + $data['question10'] + $data['question11'] + $data['question12']) . "],";
+            }
     echo "]);
-
-    var options = {
-        title: 'Group Scores',
-        legend: { position: 'bottom' }
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-
-    chart.draw(data, options);
-}
-</script>";
+    
+        var options = {
+            title: 'Group $Group Scores',
+            backgroundColor: '#f9f9f9',
+            pieHole: 0.4
+        };
+    
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    </script>";
 
 
         }
@@ -146,32 +146,34 @@ function drawChart() {
 </head>
 <body>
     <form method="post">
-        <label for="group">Choose a group:</label>
-        <select id="group" name="group">
-            <option value="RFG"<?php if ($Group == 'RFG') {echo ' selected';} ?>>RFG</option>
-            <option value="HOPPY BUNNIES"<?php if ($Group == 'HOPPY BUNNIES') {echo ' selected';} ?>>HOPPY BUNNIES</option>
-            <option value="VINATHLETICS"<?php if ($Group == 'VINATHLETICS') {echo ' selected';} ?>>VINATHLETICS</option>
-            <option value="THE Cs ACCESSORIES"<?php if ($Group == 'THE Cs ACCESSORIES') {echo ' selected';} ?>>THE C'S ACCESSORIES</option>
-            <option value="YARN DREAMS"<?php if ($Group == 'YARN DREAMS') {echo ' selected';} ?>>YARN DREAMS</option>
-            <option value="CC EONNIE MINI STORE"<?php if ($Group == 'CC EONNIE MINI STORE') {echo ' selected';} ?>>CC EONNIE MINI STORE</option>
-        </select>
-        <button type="submit">Confirm</button>
+        <div class="group">
+            <label for="group">Choose a group:</label>
+            <select id="group" name="group">
+                <option value="RFG"<?php if ($Group == 'RFG') {echo ' selected';} ?>>RFG</option>
+                <option value="HOPPY BUNNIES"<?php if ($Group == 'HOPPY BUNNIES') {echo ' selected';} ?>>HOPPY BUNNIES</option>
+                <option value="VINATHLETICS"<?php if ($Group == 'VINATHLETICS') {echo ' selected';} ?>>VINATHLETICS</option>
+                <option value="THE Cs ACCESSORIES"<?php if ($Group == 'THE Cs ACCESSORIES') {echo ' selected';} ?>>THE C'S ACCESSORIES</option>
+                <option value="YARN DREAMS"<?php if ($Group == 'YARN DREAMS') {echo ' selected';} ?>>YARN DREAMS</option>
+                <option value="CC EONNIE MINI STORE"<?php if ($Group == 'CC EONNIE MINI STORE') {echo ' selected';} ?>>CC EONNIE MINI STORE</option>
+            </select>
+            <button type="submit">Confirm</button>
+        </div>
 </form>
 
-<table>
+<table id="header">
+    <thead>
     <tr>
         <td><?php echo $Group; ?></td>
-        <td><?php echo $total_score; ?></td>
-        <td>
-            <?php if (!empty($scores)): ?>
-                <div id="chart_div"></div>
-            <?php endif; ?>
-        </td>
+        <td>Total: <?php echo $total_score; ?></td>
     </tr>
 </table>
 
 <?php if (!empty($scores)): ?>
-    <table>
+    <div id="chart_div"></div>
+<?php endif; ?>
+
+<?php if (!empty($scores)): ?>
+    <table id="data">
         <thead>
             <tr>
                 <th>User</th>

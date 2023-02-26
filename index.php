@@ -31,7 +31,7 @@
         <div>
             <p>NATIONAL</p>
             <p>UNIVERSITY</p>
-            <p style="color:blue">FAIRVIEW</p>
+            <p style="color:#35408E">FAIRVIEW</p>
         </div>
     </div>
 

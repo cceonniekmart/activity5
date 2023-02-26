@@ -2,7 +2,7 @@
 
 body {
     background-image: url(images/bg2.png);
-    background-size: contain;
+    background-size: cover;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -15,31 +15,66 @@ body {
 }
 
 form {
-    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-label, select {
-    font-size: 16px;
-    margin-right: 10px;
+
+div.group {
+    background-color: #35408E;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px 0;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 2em;
+    display: inline-flex;
+    align-items: center;
+}
+div.group label{
+    margin-left: 2em;
+    color: white;
+    width: 27%;
+}
+div.group select{
+    background-color: #FCD323;
+    font-size: 25px;
+    width: 60%;
+    margin-right: 2em;
+    text-align: center;
+    border-radius: 10px;
+    color: black;
+}
+
+table#header {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #FCD323;
+}
+
+#chart_div{
+    width: 80%;
+    margin: 0 auto;
 }
 button {
-    background-color: #4CAF50;
+    background-color: #FCD323;
     border: none;
-    color: white;
+    color: black;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
+    width: 7em;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin-right: 5em;
     cursor: pointer;
 }
 table {
     font-size: 16px;
     border-collapse: collapse;
+    background-color: #FCD323; 
     margin: 0 auto;
+    width: 80%;
 }
 th, td {
     border: 1px solid #ddd;
@@ -47,6 +82,6 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #4CAF50;
+    background-color: #35408E;
     color: white;
 }
