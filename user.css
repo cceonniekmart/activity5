@@ -1,35 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&family=Montserrat+Alternates:wght@500&family=Pathway+Gothic+One&family=Press+Start+2P&family=Righteous&family=Rowdies&family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Maven+Pro:wght@500&family=Montserrat+Alternates:wght@500&family=Pathway+Gothic+One&family=Poppins:wght@300&family=Press+Start+2P&family=Righteous&family=Rowdies&family=Titillium+Web:wght@200&display=swap');
 
 body {
-    background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg);
-    background-size: cover;
+    background-color: white;
+    /*background-image: url(images/bg.png);
+    background-size: cover;*/
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 
 }
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+}
 label {
     margin-bottom: 10px;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
+div.group {
+    background-color: blue;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px 0;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 2em;
+    display: inline-block;
+}
+div.group label{
+    margin-left: 2em;
+    color: white;
+    width: 27%;
+}
 
+div.group select{
+    background-color: yellow;
+    font-size: 25px;
+    width: 60%;
+    margin-right: 2em;
+    text-align: center;
+    border-radius: 10px;
+    color: black;
+}
+
+h2 {
+    background-color: blue;
+    padding: 10px;
+    text-align: right;
+    color: white;
+
+}
+
+.error, .success {
+    margin: 0;
+   background: #F2DEDE;
+   color: #0c0101;
+   width: 100%;
+   font-size: 1em; /* Use relative units for font-size */
+   text-align: center;
+   padding: 10px;
+}
+
+.success{
+    background: #9de999;
+}
+
+.rubrics{
+    border: black 1px solid;
+    width: 80%;
+}
 .question {
-    margin-bottom: 20px;
-}
-
-.error {
-    color: red;
-    margin-bottom: 10px;
-}
+    display: table;
+    width: 100%;
+    background-color: blue;
+    padding: 10px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+  }
+  
+  .question p,
+  .question label {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+  }
+  
+  .question p {
+    width: 50%;
+    color: white;
+  }
+  
+  .question label {
+    text-align: center;
+    background-color: yellow;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  
+  .question input[type="radio"] {
+    display: none;
+  }
+  
+  .question label:hover {
+    background-color:  blue;
+    color: white;
+  }
+  
+  .question input[type="radio"]:checked + label {
+    background-color: blue;
+    color: white;
+  }
 
 button[type="submit"] {
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin-top: 20px;
+    margin: 20px;
     cursor: pointer;
 }
