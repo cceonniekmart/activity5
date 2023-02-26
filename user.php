@@ -25,21 +25,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   </div>
   
   
-  <h2>Rubrics for group project: <br>
-  1 = Fail, 
-  2 = Fair, 
-  3 = Good, 
-  4 = Very Good,
-  5 = Excellent</h2>
-  
+
 
   <div class="rubrics">
+    
+  <h3>Question:</h3>
+  
   <?php if (isset($_GET['error'])) { ?>
       <p class="error"><?php echo $_GET['error']; ?></p>
   <?php } ?>
   <?php if (isset($_GET['success'])) { ?>
       <p class="success"><?php echo $_GET['success']; ?></p>
   <?php } ?>
+  <h2>
+    &nbsp;&nbsp;&nbsp;Rubrics for group project: 
+    <br>
+    <br>
+    &nbsp;&nbsp;&nbsp;1 = Fail&nbsp;&nbsp;&nbsp;&nbsp;2 = Fair&nbsp;&nbsp;&nbsp;&nbsp;3 = Good&nbsp;&nbsp;&nbsp;&nbsp;4 = Very Good&nbsp;&nbsp;&nbsp;&nbsp;5 = Excellent<br>
+    
+  </h2>
     <div class="question">
       
       <p>Rubrics 01: <span style="font-weight: 1000;">Content</span></p>
