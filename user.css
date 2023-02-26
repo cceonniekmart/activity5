@@ -56,8 +56,6 @@ h2 {
     padding: 10px;
     text-align: right;
     color: white;
-    border-radius: 5px;
-    
 
 }
 
@@ -95,11 +93,12 @@ h2 {
   .question p {
     width: 50%;
     color: white;
+    font-size: 30px;
   }
   
   .question label {
     text-align: center;
-    background-color: #FCD323;
+    background-color: #FCD323    ;
     border-left: none;
     cursor: pointer;
   }
@@ -109,14 +108,10 @@ h2 {
     display: none;
   }
   
-  label:hover {
+  .question label:hover {
     background-color:   #35408E;
     color: white;
-
   }
-
-  
-
   
   .question input[type="radio"]:checked + label {
     background-color:  #35408E;
