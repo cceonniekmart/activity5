@@ -36,7 +36,6 @@ if (isset($_POST['group'])) {
 
     }else if(empty($Question5)){
         header("Location: user.php?error=Answer 5 is required");
-        exit();
 
     }else if(empty($Question6)){
         header("Location: user.php?error=Answer 6 is required");
@@ -91,3 +90,4 @@ if (isset($_POST['group'])) {
     header("Location: user.php");
     exit();
 }
+

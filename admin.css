@@ -38,18 +38,28 @@ div.group label{
 }
 div.group select{
     background-color: #FCD323;
-    font-size: 25px;
+    font-size: 18px;
+    padding: 7px;
     width: 60%;
     margin-right: 2em;
-    text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     color: black;
 }
 
 table#header {
     margin: 0 auto;
     width: 80%;
+    border-collapse: collapse;
     background-color: #FCD323;
+}
+table#header th,table#header  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+table#header th {
+    background-color: #35408E;
+    color: white;
 }
 
 #chart_div{
@@ -60,28 +70,32 @@ button {
     background-color: #FCD323;
     border: none;
     color: black;
+    border-radius: 5px;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     width: 7em;
     display: inline-block;
     font-size: 16px;
-    margin-right: 5em;
+    margin-right: 4em;
+    margin-left: 2em;
     cursor: pointer;
 }
-table {
+table#data {
     font-size: 16px;
     border-collapse: collapse;
     background-color: #FCD323; 
     margin: 0 auto;
     width: 80%;
-}
-th, td {
     border: 1px solid #ddd;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+table#data th,table#data  td {
     padding: 8px;
     text-align: left;
 }
-th {
+table#data th {
     background-color: #35408E;
     color: white;
 }

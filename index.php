@@ -16,7 +16,7 @@
             <p class="input_title">Username</p>
             <label>
                 <img src="images/user.png">
-                <input type="text" id="uname" name="uname" placeholder="User Name">
+                <input type="text" id="uname" name="uname" placeholder="Username">
             </label>
             <p class="input_title">Password</p>
             <label>
