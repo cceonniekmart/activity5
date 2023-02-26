@@ -93,6 +93,7 @@ h2 {
   .question p {
     width: 50%;
     color: white;
+    font-size: 30px;
   }
   
   .question label {

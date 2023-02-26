@@ -37,7 +37,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   <?php } ?>
     <div class="question">
       
-      <p>R1: <span style="font-size:30px;">Content</span></p>
+      <p>Rubrics 01: <span style="font-weight: 1000;">Content</span></p>
       
       <input type="radio" name="question1" id="q1a1" value="1">
       <label for="q1a1">1</label>
@@ -56,7 +56,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
       
       <div class="question">
-      <p>R2: <span style="font-size:30px;yellow">Content Accuracy</span></p>
+      <p>Rubrics 02: <span style="font-weight: 1000;">Content Accuracy</span></p>
       
       <input type="radio" name="question2" id="q2a1" value="1">
       <label for="q2a1">1</label>
@@ -75,7 +75,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R3: <span style="font-size:30px;yellow">Layout</span></p>
+      <p>Rubrics 03: <span style="font-weight: 1000;">Layout</span></p>
       
       <input type="radio" name="question3" id="q3a1" value="1">
       <label for="q3a1">1</label>
@@ -94,7 +94,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R4: <span style="font-size:30px;yellow">Navigation</span></p>
+      <p>Rubrics 04: <span style="font-weight: 1000;">Navigation</span></p>
       
       <input type="radio" name="question4" id="q4a1" value="1">
       <label for="q4a1">1</label>
@@ -113,7 +113,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R5: <span style="font-size:30px;yellow">Links(content)</span></p>
+      <p>Rubrics 05: <span style="font-weight: 1000;">Links(content)</span></p>
       
       <input type="radio" name="question5" id="q5a1" value="1">
       <label for="q5a1">1</label>
@@ -132,7 +132,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R6: <span style="font-size:30px;yellow">Background</span></p>
+      <p>Rubrics 06: <span style="font-weight: 1000;">Background</span></p>
       
       <input type="radio" name="question6" id="q6a1" value="1">
       <label for="q6a1">1</label>
@@ -151,7 +151,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R7: <span style="font-size:30px;yellow">Color Choices</span></p>
+      <p>Rubrics 07: <span style="font-weight: 1000;">Color Choices</span></p>
       
       <input type="radio" name="question7" id="q7a1" value="1">
       <label for="q7a1">1</label>
@@ -170,7 +170,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R8: <span style="font-size:30px;yellow">Fonts</span></p>
+      <p>Rubrics 08: <span style="font-weight: 1000;">Fonts</span></p>
       
       <input type="radio" name="question8" id="q8a1" value="1">
       <label for="q8a1">1</label>
@@ -189,7 +189,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R9: <span style="font-size:30px;yellow">Graphics</span></p>
+      <p>Rubrics 09: <span style="font-weight: 1000;">Graphics</span></p>
       
       <input type="radio" name="question9" id="q9a1" value="1">
       <label for="q9a1">1</label>
@@ -208,7 +208,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R10: <span style="font-size:30px;yellow">Images</span></p>
+      <p>Rubrics 10: <span style="font-weight: 1000;">Images</span></p>
       
       <input type="radio" name="question10" id="q10a1" value="1">
       <label for="q10a1">1</label>
@@ -227,7 +227,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R11: <span style="font-size:30px;yellow">Spelling and Grammar</span></p>
+      <p>Rubrics 11: <span style="font-weight: 1000;">Spelling and Grammar</span></p>
       
       <input type="radio" name="question11" id="q11a1" value="1">
       <label for="q11a1">1</label>
@@ -246,7 +246,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
 
       <div class="question">
-      <p>R12: <span style="font-size:30px;yellow">Copyright</span></p>
+      <p>Rubrics 12: <span style="font-weight: 1000;">Copyright</span></p>
       
       <input type="radio" name="question12" id="q12a1" value="1">
       <label for="q12a1">1</label>
