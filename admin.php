@@ -93,18 +93,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     foreach ($scores as $user => $user_scores) {
         $chart_data[] = array(
             'user' => $user,
-            'question1' => (int)$user_scores['question1'],
-            'question2' => (int)$user_scores['question2'],
-            'question3' => (int)$user_scores['question3'],
-            'question4' => (int)$user_scores['question4'],
-            'question5' => (int)$user_scores['question5'],
-            'question6' => (int)$user_scores['question6'],
-            'question7' => (int)$user_scores['question7'],
-            'question8' => (int)$user_scores['question8'],
-            'question9' => (int)$user_scores['question9'],
-            'question10' => (int)$user_scores['question10'],
-            'question11' => (int)$user_scores['question11'],
-            'question12' => (int)$user_scores['question12']
+            'question1' => (float)$user_scores['question1'],
+            'question2' => (float)$user_scores['question2'],
+            'question3' => (float)$user_scores['question3'],
+            'question4' => (float)$user_scores['question4'],
+            'question5' => (float)$user_scores['question5'],
+            'question6' => (float)$user_scores['question6'],
+            'question7' => (float)$user_scores['question7'],
+            'question8' => (float)$user_scores['question8'],
+            'question9' => (float)$user_scores['question9'],
+            'question10' => (float)$user_scores['question10'],
+            'question11' => (float)$user_scores['question11'],
+            'question12' => (float)$user_scores['question12']
         );
     }
 
@@ -124,8 +124,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     
         var options = {
             title: 'Group $Group Scores',
-            backgroundColor: '#f9f9f9',
-            pieHole: 0.4
+            vAxis: {title: 'Score', format:'#.##'},
+            hAxis: {title: 'User'},
+            seriesType: 'bars',
+            series: {12: {type: 'line'}}
+
         };
     
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
