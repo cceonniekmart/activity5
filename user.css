@@ -26,7 +26,7 @@ form {
     width: 100%;
 }
 div.group {
-    background-color: blue;
+    background-color: #35408E;
     border-radius: 5px;
     width: 80%;
     padding: 10px 0;
@@ -42,7 +42,7 @@ div.group label{
 }
 
 div.group select{
-    background-color: yellow;
+    background-color: #FCD323;
     font-size: 25px;
     width: 60%;
     margin-right: 2em;
@@ -52,7 +52,7 @@ div.group select{
 }
 
 h2 {
-    background-color: blue;
+    background-color:  #35408E;
     padding: 10px;
     text-align: right;
     color: white;
@@ -79,7 +79,7 @@ h2 {
 .question {
     display: table;
     width: 100%;
-    background-color: blue;
+    background-color:  #35408E;
     padding: 10px;
   }
   
@@ -97,7 +97,7 @@ h2 {
   
   .question label {
     text-align: center;
-    background-color: yellow;
+    background-color: #FCD323    ;
     border-left: none;
     cursor: pointer;
   }
@@ -108,17 +108,17 @@ h2 {
   }
   
   .question label:hover {
-    background-color:  blue;
+    background-color:   #35408E;
     color: white;
   }
   
   .question input[type="radio"]:checked + label {
-    background-color: blue;
+    background-color:  #35408E;
     color: white;
   }
 
 button[type="submit"] {
-    background-color: blue;
+    background-color:  #35408E;
     border: none;
     color: white;
     padding: 10px 20px;
