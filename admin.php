@@ -148,7 +148,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
-    <form method="post">
+
+
+
+
+<form method="post">
+
+
         <div class="group">
             <label for="group">Choose a group:</label>
             <select id="group" name="group">
@@ -259,5 +265,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     </script>
 <?php endif; ?>
+<a href="index.php"><img src="images/login.png">Logout</a>
 </body>
 </html>
