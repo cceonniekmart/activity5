@@ -13,19 +13,19 @@
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
-            <p>Username</p>
+            <p class="input_title">Username</p>
             <label>
                 <img src="images/user.png">
                 <input type="text" id="uname" name="uname" placeholder="User Name">
             </label>
-            <p>Password</p>
+            <p class="input_title">Password</p>
             <label>
                 <img src="images/pw.png">
                 <input type="password" id="password" name="password" placeholder="Password">
             </label>
-            <button type="submit">Login</button>
+            <button type="submit"><img src="images/login.png">Login</button>
             <a class="btn btn-success" href="create.php">
-                Register
+            <img src="images/register.png">Register
             </a>
         </form>
         <div>
