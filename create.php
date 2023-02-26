@@ -46,7 +46,9 @@
 </head>
 <html>
 <body>
-
+    <div class="nu_title">
+        <p>NATIONAL UNIVERSITY <span style="color:#FCD323;">FAIRVIEW</span></p>
+    </div>
 <div class="loginflex">
     <form method="POST">
         <h2 id="title">EDUCATION THAT WORKS</h2>
@@ -89,9 +91,7 @@
         <button type="submit" name="submit"><img src="images/register.png">Create</button>
     </form>
     <div>
-        <p>NATIONAL</p>
-        <p>UNIVERSITY</p>
-        <p style="color:blue">FAIRVIEW</p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png">
     </div>
     </div>
 </body>
