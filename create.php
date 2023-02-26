@@ -79,16 +79,22 @@
             <img src="images/pw.png">
             <input type="password" id="uname" name="confirm_password" placeholder="Confirm Password">
         </label>
-        <label class="radio-inline">
-            <input type="radio" name="user_type" value="user"> 
-            <span class="radio-label">User</span>
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="user_type" value="admin"> 
-            <span class="radio-label">Admin</span>
-        </label>    
+        <div class="radio-container">
+            <label class="radio-inline">
+                <input type="radio" name="user_type" value="user"> 
+                <span class="radio-label">User</span>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="user_type" value="admin"> 
+                <span class="radio-label">Admin</span>
+            </label> 
+        </div>  
+        
+            <a href="index.php"><img src="images/login.png">Back</a>
+            <button type="submit" name="submit"><img src="images/register.png">Create</button>
+        
 
-        <button type="submit" name="submit"><img src="images/register.png">Create</button>
+
     </form>
     <div>
         <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png">
