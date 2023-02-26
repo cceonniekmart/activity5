@@ -73,22 +73,9 @@ h1 {
     color: rgb(134, 3, 3);
 }
 
-a {
-    background: rgb(0, 0, 0);
-    padding: 10px 15px;
-    color: #f50000;
-    border-radius: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    border: none;
-    text-decoration: none;
-    display: block;
-    margin: 0 auto;
-}
 
-a:hover{
-    opacity: .7;
-}
+
+
 
 div.alert{
     top: 0;
@@ -105,3 +92,4 @@ input[type="submit"] {
     padding: 10px;
     font-size: 16px;
     }
+
