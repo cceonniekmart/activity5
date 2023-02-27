@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     }
 
     // get scores for selected group
-    $sql = "SELECT answer_by, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12
+    $sql = "SELECT answer_by, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, total_score
             FROM tbl_answers 
             WHERE group_num='$Group'
             ORDER BY answer_by ASC";
@@ -25,6 +25,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         die("Error: " . mysqli_error($conn));
     }
 
+    
+    // update total score for each user in tbl_answers
+    foreach ($scores as $user => $user_scores) {
+        $total_score = array_sum($user_scores);
+        $update_sql = "UPDATE tbl_answers SET total_score = $total_score WHERE answer_by = '$user'";
+        mysqli_query($conn, $update_sql);
+        }
+        
     // fetch rows and store scores for each user
     $scores = array();
     while ($row = mysqli_fetch_assoc($result)) {
@@ -41,6 +49,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         $question10_score = $row['r10'];
         $question11_score = $row['r11'];
         $question12_score = $row['r12'];
+        $total_score = $row['total_score'];
 
         if (!isset($scores[$answer_by])) {
             $scores[$answer_by] = array(
@@ -55,7 +64,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 'question9' => $question9_score,
                 'question10' => $question10_score,
                 'question11' => $question11_score,
-                'question12' => $question12_score
+                'question12' => $question12_score,
+                'total_score' => $total_score
             );
         } else {
             $scores[$answer_by]['question1'] = $question1_score;
@@ -70,10 +80,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             $scores[$answer_by]['question10'] = $question10_score;
             $scores[$answer_by]['question11'] = $question11_score;
             $scores[$answer_by]['question12'] = $question12_score;
+            $scores[$answer_by]['total_score'] = $total_score;
         }
     }
 
-    $sql2 = "SELECT SUM(r1 + r2 + r3 + r4 + r5 + r6 + r7 + r8 + r9 + r10 + r11 + r12) as total
+    $sql2 = "SELECT AVG(r1 + r2 + r3 + r4 + r5 + r6 + r7 + r8 + r9 + r10 + r11 + r12) as total
             FROM tbl_answers
             WHERE group_num='$Group'";
 
@@ -94,18 +105,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     foreach ($scores as $user => $user_scores) {
         $chart_data[] = array(
             'user' => $user,
-            'question1' => (float)$user_scores['question1'],
-            'question2' => (float)$user_scores['question2'],
-            'question3' => (float)$user_scores['question3'],
-            'question4' => (float)$user_scores['question4'],
-            'question5' => (float)$user_scores['question5'],
-            'question6' => (float)$user_scores['question6'],
-            'question7' => (float)$user_scores['question7'],
-            'question8' => (float)$user_scores['question8'],
-            'question9' => (float)$user_scores['question9'],
-            'question10' => (float)$user_scores['question10'],
-            'question11' => (float)$user_scores['question11'],
-            'question12' => (float)$user_scores['question12']
+            'question1' => (double)$user_scores['question1'],
+            'question2' => (double)$user_scores['question2'],
+            'question3' => (double)$user_scores['question3'],
+            'question4' => (double)$user_scores['question4'],
+            'question5' => (double)$user_scores['question5'],
+            'question6' => (double)$user_scores['question6'],
+            'question7' => (double)$user_scores['question7'],
+            'question8' => (double)$user_scores['question8'],
+            'question9' => (double)$user_scores['question9'],
+            'question10' => (double)$user_scores['question10'],
+            'question11' => (double)$user_scores['question11'],
+            'question12' => (double)$user_scores['question12']
         );
     }
 
@@ -194,6 +205,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <th>R10</th>
                 <th>R11</th>
                 <th>R12</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
@@ -212,6 +224,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     <td><?php echo $user_scores['question10']; ?></td>
                     <td><?php echo $user_scores['question11']; ?></td>
                     <td><?php echo $user_scores['question12']; ?></td>
+                    <td><?php echo $user_scores['total_score']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

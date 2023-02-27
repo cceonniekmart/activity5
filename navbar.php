@@ -11,14 +11,14 @@
 <body>
   <nav>
     <div class="logo">
-       <a href="login.php"><img src="images/logo.png"></a>
+       <a href="login.php"><img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png"></a>
     </div>
     <div class="container">
         <p>NATIONAL UNIVERSITY <span class="auto-type"></span></p>
     </div>
         
     <div class="txt2">
-        <p>Greetings, <span style="color: #FCD323;"><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span></p>
+        <p>Greetings, <span style="color: #FCD323;"><?php echo $_SESSION['first_name']; ?></span></p>
     </div>
 </nav>
 
