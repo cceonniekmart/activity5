@@ -181,6 +181,7 @@ h2 {
 
   #logout{
     margin-top: 6em;
+    width: 100%;
   }
 
 button[type="submit"] {

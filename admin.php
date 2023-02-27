@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     }
 
     // get scores for selected group
-    $sql = "SELECT answer_by, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, total_score
+    $sql = "SELECT answer_by, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12
             FROM tbl_answers 
             WHERE group_num='$Group'
             ORDER BY answer_by ASC";
@@ -25,14 +25,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         die("Error: " . mysqli_error($conn));
     }
 
-    
-    // update total score for each user in tbl_answers
-    foreach ($scores as $user => $user_scores) {
-        $total_score = array_sum($user_scores);
-        $update_sql = "UPDATE tbl_answers SET total_score = $total_score WHERE answer_by = '$user'";
-        mysqli_query($conn, $update_sql);
-        }
-        
     // fetch rows and store scores for each user
     $scores = array();
     while ($row = mysqli_fetch_assoc($result)) {
@@ -49,7 +41,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         $question10_score = $row['r10'];
         $question11_score = $row['r11'];
         $question12_score = $row['r12'];
-        $total_score = $row['total_score'];
 
         if (!isset($scores[$answer_by])) {
             $scores[$answer_by] = array(
@@ -64,8 +55,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 'question9' => $question9_score,
                 'question10' => $question10_score,
                 'question11' => $question11_score,
-                'question12' => $question12_score,
-                'total_score' => $total_score
+                'question12' => $question12_score
             );
         } else {
             $scores[$answer_by]['question1'] = $question1_score;
@@ -80,11 +70,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             $scores[$answer_by]['question10'] = $question10_score;
             $scores[$answer_by]['question11'] = $question11_score;
             $scores[$answer_by]['question12'] = $question12_score;
-            $scores[$answer_by]['total_score'] = $total_score;
         }
     }
 
-    $sql2 = "SELECT AVG(r1 + r2 + r3 + r4 + r5 + r6 + r7 + r8 + r9 + r10 + r11 + r12) as total
+$sql2 = "SELECT ROUND(AVG(r1 + r2 + r3 + r4 + r5 + r6 + r7 + r8 + r9 + r10 + r11 + r12), 2) as total
             FROM tbl_answers
             WHERE group_num='$Group'";
 
@@ -165,12 +154,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="group">
             <label for="group">Choose a group:</label>
             <select id="group" name="group">
+                <option value="LAKWATSERO"<?php if ($Group == 'LAKWATSERO') {echo ' selected';} ?>>LAKWATSERO</option>
+                <option value="TANGLAW CLOTHING"<?php if ($Group == 'TANGLAW CLOTHING') {echo ' selected';} ?>>TANGLAW CLOTHING</option>
+                <option value="ECOKNOW"<?php if ($Group == 'ECOKNOW') {echo ' selected';} ?>>ECOKNOW</option>
+                <option value="GROUP OF JACOB"<?php if ($Group == 'GROUP OF JACOB') {echo ' selected';} ?>>GROUP OF JACOB</option>
+                <option value="INTRA PILIPINAS"<?php if ($Group == 'INTRA PILIPINAS') {echo ' selected';} ?>>INTRA PILIPINAS</option>
+                <option value="HELP A PAW"<?php if ($Group == 'HELP A PAW') {echo ' selected';} ?>>HELP A PAW</option>
                 <option value="RFG"<?php if ($Group == 'RFG') {echo ' selected';} ?>>RFG</option>
                 <option value="HOPPY BUNNIES"<?php if ($Group == 'HOPPY BUNNIES') {echo ' selected';} ?>>HOPPY BUNNIES</option>
                 <option value="VINATHLETICS"<?php if ($Group == 'VINATHLETICS') {echo ' selected';} ?>>VINATHLETICS</option>
                 <option value="THE Cs ACCESSORIES"<?php if ($Group == 'THE Cs ACCESSORIES') {echo ' selected';} ?>>THE C'S ACCESSORIES</option>
                 <option value="YARN DREAMS"<?php if ($Group == 'YARN DREAMS') {echo ' selected';} ?>>YARN DREAMS</option>
                 <option value="CC EONNIE MINI STORE"<?php if ($Group == 'CC EONNIE MINI STORE') {echo ' selected';} ?>>CC EONNIE MINI STORE</option>
+                <option value="WORDTOPIA"<?php if ($Group == 'WORDTOPIA') {echo ' selected';} ?>>WORDTOPIA</option>
+                <option value="BEL ENTERIEUR"<?php if ($Group == 'BEL ENTERIEUR') {echo ' selected';} ?>>BEL ENTERIEUR</option>
+                <option value="HWGL"<?php if ($Group == 'HWGL') {echo ' selected';} ?>>HWGL</option>
             </select>
             <button type="submit">Confirm</button>
         </div>
@@ -180,7 +178,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <thead>
     <tr>
         <td><?php echo $Group; ?></td>
-        <td>Total: <?php echo $total_score; ?></td>
+        <td>Average: <?php echo $total_score; ?>/60</td>
     </tr>
 </table>
 
@@ -205,7 +203,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <th>R10</th>
                 <th>R11</th>
                 <th>R12</th>
-                <th>Total</th>
             </tr>
         </thead>
         <tbody>
@@ -224,7 +221,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     <td><?php echo $user_scores['question10']; ?></td>
                     <td><?php echo $user_scores['question11']; ?></td>
                     <td><?php echo $user_scores['question12']; ?></td>
-                    <td><?php echo $user_scores['total_score']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

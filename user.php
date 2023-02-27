@@ -8,8 +8,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOME</title>
+    <title>USER - NUFV</title>
     <link rel="stylesheet" type="text/css" href="user.css">
+    <link rel = "icon" href ="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png" type = "image/x-icon">
 </head>
 <body>
 
@@ -19,12 +20,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   <div class="group">
     <label for="group">Choose a group:</label>
     <select id="group" name="group">
+      <option value="LAKWATSERO">LAKWATSERO</option>
+      <option value="TANGLAW CLOTHING">TANGLAW CLOTHING</option>
+      <option value="ECOKNOW">ECOKNOW</option>
+      <option value="GROUP OF JACOB">GROUP OF JACOB</option>
+      <option value="INTRA PILIPINAS">INTRA PILIPINAS</option>
+      <option value="HELP A PAW">HELP A PAW</option>
       <option value="RFG">RFG</option>
       <option value="HOPPY BUNNIES">HOPPY BUNNIES</option>
       <option value="VINATHLETICS">VINATHLETICS</option>
       <option value="THE Cs ACCESSORIES">THE C'S ACCESSORIES</option>
       <option value="YARN DREAMS">YARN DREAMS</option>
       <option value="CC EONNIE MINI STORE">CC EONNIE MINI STORE</option>
+      <option value="WORDTOPIA">WORDTOPIA</option>
+      <option value="BEL ENTERIEUR">BEL ENTERIEUR</option>
+      <option value="HWGL">HWGL</option>
     </select>
   </div>
   

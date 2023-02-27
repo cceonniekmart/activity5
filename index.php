@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LOGIN</title>
+    <title>LOGIN - NUFV</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel = "icon" href ="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png" type = "image/x-icon">
 </head>
 
 

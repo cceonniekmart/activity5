@@ -7,7 +7,7 @@
         $UserName = $_POST['user_name'];
         $PassWord = $_POST['password'];
         $Confirm = $_POST['confirm_password'];
-        $UserRole = $_POST['user_type']; 
+        $UserRole = isset($_POST['user_type']) ? $_POST['user_type'] : '';
 
         if (empty($FirstName) || empty($LastName) || empty($UserName) || empty($PassWord) || empty($Confirm) || empty($UserRole)) {
             header("Location: create.php?error=Kindly fill all fields");
@@ -41,8 +41,9 @@
 
 <!DOCTYPE html>
 <head>
-    <title>Create Page</title>
+    <title>REGISTER - NUFV</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel = "icon" href ="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png" type = "image/x-icon">
 </head>
 <html>
 <body>
