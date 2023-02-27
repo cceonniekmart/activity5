@@ -9,6 +9,14 @@
         $Confirm = $_POST['confirm_password'];
         $UserRole = isset($_POST['user_type']) ? $_POST['user_type'] : '';
 
+        // Check if username already exists in the database
+        $check_sql = "SELECT * FROM tbl_users WHERE user_name = '$UserName'";
+        $check_result = $conn->query($check_sql);
+        if ($check_result->num_rows > 0) {
+            header("Location: create.php?error=Username already exists");
+            exit();
+        }
+
         if (empty($FirstName) || empty($LastName) || empty($UserName) || empty($PassWord) || empty($Confirm) || empty($UserRole)) {
             header("Location: create.php?error=Kindly fill all fields");
             exit();
