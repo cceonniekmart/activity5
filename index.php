@@ -36,8 +36,9 @@
             <img src="images/register.png">Register
             </a>
         </form>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png" alt="Your Image">
+          
         </div>
     </div>
 
