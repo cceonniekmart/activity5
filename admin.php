@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include "db_conn.php";
+include "navbar.php";
 
 // check if user is logged in
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
@@ -149,12 +150,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <body>
 
-
-
-
 <form method="post">
-
-
         <div class="group">
             <label for="group">Choose a group:</label>
             <select id="group" name="group">

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include 'navbar.php';
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
  ?>
@@ -12,7 +13,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <body>
 
-<a href="index.php"><img src="images/login.png">Logout</a>
+<a id="logout"href="index.php"><img src="images/login.png">Logout</a>
 
 <form action="submit_answers.php" method="post">
   <div class="group">

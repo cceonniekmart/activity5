@@ -179,6 +179,10 @@ h2 {
 
   }
 
+  #logout{
+    margin-top: 6em;
+  }
+
 button[type="submit"] {
     background-color:  #35408E;
     border: none;
