@@ -187,4 +187,19 @@ a img{
 
 .radio-label {
     margin-left: 0.5em;
-}                     
+}   
+
+.logo img { 
+    animation-name: spin-horizontal;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes spin-horizontal {
+    from {           
+         transform: rotateY(0deg);
+         }
+    to   {
+         transform: rotateY(360deg);
+          }
+}
