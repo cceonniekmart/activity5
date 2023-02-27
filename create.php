@@ -51,7 +51,9 @@
     </div>
 <div class="loginflex">
     <form method="POST">
-        <h2 id="title">EDUCATION THAT WORKS</h2>
+        <div class="container">
+        <h3> <span class="auto-type"></span></h3>
+        </div>
         <?php if (isset($_GET['error'])) { ?>
             <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
@@ -96,9 +98,18 @@
 
 
     </form>
-    <div>
+    <div class="logo">
         <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png">
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script> 
+            var typed= new Typed(".auto-type", {
+            strings: ["EDUCATION THAT WORKS.",],
+            typeSpeed: 150,
+            loop: true 
+        })
+                 
+    </script>
 </body>
 </html>

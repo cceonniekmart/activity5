@@ -4,14 +4,19 @@
     <title>LOGIN</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
+
 <body>
+
     <div class="nu_title">
         <p>NATIONAL UNIVERSITY <span style="color:#FCD323;">FAIRVIEW</span></p>
     </div>
     <div class="loginflex">
        
         <form action="login.php" method="post">
-            <h2 id="title">EDUCATION THAT WORKS</h2>
+        <div class="container">
+        <h3> <span class="auto-type"></span></h3>
+        </div>
             
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
@@ -31,10 +36,21 @@
             <img src="images/register.png">Register
             </a>
         </form>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/National_University_seal.png" alt="Your Image">
+          
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script> 
+            var typed= new Typed(".auto-type", {
+            strings: ["EDUCATION THAT WORKS.",],
+            typeSpeed: 150,
+            loop: true 
+        })
+                 
+    </script>
 
 </body>
 </html>
